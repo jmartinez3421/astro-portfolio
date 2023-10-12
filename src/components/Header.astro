@@ -1,0 +1,99 @@
+---
+import { Image } from "astro:assets"
+import { Icon } from "astro-icon";
+
+import headerImage from "/public/images/Header_image.jpg"
+---
+
+<header>
+    <Image src={headerImage} alt="An image of Jordi Martínez Grau" class="header_image" />
+    <div class="description">
+        <h1>Welcome to my portfolio</h1>
+        <p>I am a React front-end developer with experience in Angular, NextJS, Java, Node-express, Javascript, and Typescript. I am passionate about building high-quality, user-friendly web applications.</p>
+        <p>I am always looking for new challenges, and I am eager to collaborate with others on interesting projects. If you have any questions or would like to work together, please don't hesitate to contact me.</p>
+        <h3>Contact:</h3>
+        <div>
+            <a href="mailto:jmartinezg.fp@gmail.com">
+                <Icon name="mail" class="icon" />
+            </a>
+            <a href="https://github.com/jmartinez3421" target="_blank">
+                <Icon name="brand-github" class="icon" />
+            </a>
+            <a href="www.linkedin.com/in/jordi-martínez-grau-813934215" target="_blank">
+                <Icon name="brand-linkedin" class="icon" />
+            </a>
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        padding: 2rem;
+        border-radius: 12px;
+        background-color: var(--color-surface);
+        color: var(--color-on-surface);
+        box-shadow: var(--box-shadow);
+        max-width: 1240px;
+        margin: 2rem auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    @media (max-width: 1220px) {
+        header {
+            margin: 2rem;
+        }
+    }
+
+    @media (max-width: 900px) {
+        header {
+            grid-template-columns: 1fr;
+        }
+        .header_image {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    .header_image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .description > p {
+        font-size: 2rem;
+        line-height: 1.4;
+    }
+
+    .description > h3 {
+        margin-top: 3rem;
+    }
+
+    .description > div {
+        display: flex;
+        column-gap: 1.6rem;
+    }
+
+    .description .icon {
+        width: 4rem;
+        aspect-ratio: 1/1;
+        color: var(--color-on-surface);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .description .icon:hover {
+        color: var(--color-primary);
+        transform: scale(1.1);
+    }
+</style>

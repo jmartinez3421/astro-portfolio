@@ -1,0 +1,55 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Welcome to @jmartinez3421 portfolio. Here you will be able to take a look to all my public projects." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--color-primary: #ba85fa;
+		--color-secondary: #03d8c4;
+		--color-background: #121212;
+		--color-surface: #303030;
+		--color-on-background: #f1f1f1;
+		--color-on-surface: #f1f1f1;
+		--color-on-primary: #000000;
+		--color-on-secondary: #000000;
+		--color-error: #cf6679;
+		--color-on-error: #000000;
+
+		--box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-size: 62.5%;
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-on-background);
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.6rem;
+	}
+</style>
