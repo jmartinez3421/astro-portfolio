@@ -2,98 +2,124 @@
 import { Image } from "astro:assets"
 import { Icon } from "astro-icon";
 
-import headerImage from "/public/images/Header_image.jpg"
+import headerImage from "/public/images/Header_image.png"
+import Contact from "./Contact.astro";
+import Background from "./Background.astro";
+import BottomLightDivider from "./BottomLightDivider.astro";
 ---
 
 <header>
-    <Image src={headerImage} alt="An image of Jordi Martínez Grau" class="header_image" />
-    <div class="description">
-        <h1>Welcome to my portfolio</h1>
-        <p>I am a React front-end developer with experience in Angular, NextJS, Java, Node-express, Javascript, and Typescript. I am passionate about building high-quality, user-friendly web applications.</p>
-        <p>I am always looking for new challenges, and I am eager to collaborate with others on interesting projects. If you have any questions or would like to work together, please don't hesitate to contact me.</p>
-        <h3>Contact:</h3>
-        <div>
-            <a href="mailto:jmartinezg.fp@gmail.com">
-                <Icon name="mail" class="icon" />
-            </a>
-            <a href="https://github.com/jmartinez3421" target="_blank">
-                <Icon name="brand-github" class="icon" />
-            </a>
-            <a href="www.linkedin.com/in/jordi-martínez-grau-813934215" target="_blank">
-                <Icon name="brand-linkedin" class="icon" />
-            </a>
+    <Background />
+    <div class="header">
+        <div class="description">
+            <h1>Hi, I'm Jordi</h1>
+            <h2>I create efficient and beautiful webapps</h2>
+            <p>I'm a Frontend developer with experience in React, NextJS, Angular, Typescript and Javascript. I've also worked in Backend using Node, express, Mongoose and a little bit of Java.</p>
+            <p>I'm very creative and I like to bring a lot of ideas and improvements to the projects I work on.</p>
+            <p>I am always looking for new challenges, and I am eager to collaborate with others on interesting projects. If you have any questions or would like to work together, please don't hesitate to <b>contact me:</b></p>
+            <Contact />
+        </div>
+        <div class="image_container">
+            <Image src={headerImage} alt="An image of Jordi Martínez Grau" class="image" />
         </div>
     </div>
+    <BottomLightDivider />
 </header>
 
 <style>
     header {
-        padding: 2rem;
-        border-radius: 12px;
-        background-color: var(--color-surface);
-        color: var(--color-on-surface);
-        box-shadow: var(--box-shadow);
-        max-width: 1240px;
-        margin: 2rem auto;
+        position: relative;
+    }
 
+    .header {
+        position: relative;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
+        align-items: flex-start;
+        height: 100%;
+        min-height: 100svh;
+        padding: 15rem 10rem 12.3rem 10rem;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10rem;
     }
 
-    @media (max-width: 1220px) {
-        header {
-            margin: 2rem;
-        }
+    .image {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 13px;
+        z-index: 1;
     }
 
-    @media (max-width: 900px) {
-        header {
-            grid-template-columns: 1fr;
-        }
-        .header_image {
-            max-width: 400px;
+    .image_container {
+        position: relative;
+        text-align: end;
+    }
+
+    .image_container::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        width: 100%;
+        aspect-ratio: 1/1;
+        max-width: 500px;
+        background-color: var(--color-primary);
+        border-radius: 13px;
+        z-index: 0;
+        transform: rotate(5deg) translateY(-50%);
+    }
+
+    .description {
+
+    }
+
+    .description h1 {
+        font-size: 8rem;
+        font-weight: 700;
+    }
+
+    .description h2 {
+        font-size: 2.8rem;
+        font-weight: 400;
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .description p {
+        font-size: 2.4rem;
+        font-weight: 300;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 1920px) {
+        .header {
+            width: 1920px;
             margin: 0 auto;
         }
     }
 
-    .header_image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-        box-shadow: var(--box-shadow);
+    @media (max-width: 880px) {
+        .header {
+            grid-template-columns: 1fr;
+            row-gap: 10rem;
+        }
+
+        .image_container {
+            text-align: center;
+        }
+
+        .image_container::before {
+            right: 50%;
+            top: -3rem;
+            transform: rotate(5deg) translateX(50%);
+        }
     }
 
-    .description {
-        display: flex;
-        flex-direction: column;
-        row-gap: 2rem;
-    }
-
-    .description > p {
-        font-size: 2rem;
-        line-height: 1.4;
-    }
-
-    .description > h3 {
-        margin-top: 3rem;
-    }
-
-    .description > div {
-        display: flex;
-        column-gap: 1.6rem;
-    }
-
-    .description .icon {
-        width: 4rem;
-        aspect-ratio: 1/1;
-        color: var(--color-on-surface);
-        transition: all 0.2s ease-in-out;
-    }
-
-    .description .icon:hover {
-        color: var(--color-primary);
-        transform: scale(1.1);
+    @media (max-width: 600px) {
+        .header {
+            padding: 15rem 3rem;
+        }
     }
 </style>
