@@ -6,12 +6,13 @@ interface Props {
     label: string;
     icon?: string;
     size?: number;
+    newTab?: boolean;
 }
 
-const { src, label, icon, size } = Astro.props;
+const { src, label, icon, size, newTab } = Astro.props;
 ---
 
-<a href={src}>
+<a href={src} target={newTab ? "_blank" : "_self"}>
     {icon && <Icon name={icon} class="icon" style={{ width: `${size + 2}rem` }} />}
     <span>{label}</span>
 </a>
@@ -27,6 +28,7 @@ const { src, label, icon, size } = Astro.props;
         background-color: rgba(0, 0, 0, 0.3);
         border-radius: 8px;
         transition: all 0.2s ease-in-out;
+        overflow: hidden;
     }
 
     .icon {
