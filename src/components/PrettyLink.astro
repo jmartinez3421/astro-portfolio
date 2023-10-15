@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+    src: string;
+    label: string;
+    icon?: string;
+    size?: number;
+}
+
+const { src, label, icon, size } = Astro.props;
+---
+
+<a href={src}>
+    {icon && <Icon name={icon} class="icon" style={{ width: `${size + 2}rem` }} />}
+    <span>{label}</span>
+</a>
+
+<style>
+    a {
+        display: inline-flex;
+        margin: 0 1.6rem;
+        align-items: center;
+        color: var(--color-primary);
+        text-decoration: none;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .icon {
+        margin: -0.5rem 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0.5rem 1rem;
+    }
+
+    span {
+        padding: 0.5rem 1rem;
+        font-size: inherit;
+    }
+
+    a:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
+    }
+</style>

@@ -13,7 +13,8 @@ export const UI_I18N = {
         "header.description2": "I'm very creative and I like to bring a lot of ideas and improvements to the projects I work on.",
         "header.description3": "I am always looking for new challenges, and I am eager to collaborate with others on interesting projects. If you have any questions or would like to work together, please don't hesitate to contact me:",
         "projects.title": "My Projects",
-
+        "projects.subtitle": "Here are some of my personal projects.",
+        "projects.seeMore": "You can see more projects in my",
     },
     es: {
         "header.title": "Hola, soy Jordi",
@@ -22,5 +23,7 @@ export const UI_I18N = {
         "header.description2": "Soy muy creativo y me gusta aportar muchas ideas y mejoras a los proyectos en los que trabajo.",
         "header.description3": "Siempre estoy buscando nuevos retos, y tengo muchas ganas de colaborar con otros en proyectos interesantes. Si tienes alguna pregunta o te gustaría trabajar juntos, no dudes en contactarme:",
         "projects.title": "Mis Proyectos",
+        "projects.subtitle": "Aquí tienes algunos de mis proyectos personales.",
+        "projects.seeMore": "Puedes ver más proyectos en mi",
     }
 } as const;

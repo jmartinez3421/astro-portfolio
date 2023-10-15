@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import BottomLightDivider from "./BottomLightDivider.astro";
+import PrettyLink from "./PrettyLink.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -8,6 +9,9 @@ const t = useTranslations(lang);
 
 <section id="projects">
     <h1 class="title">{t("projects.title")}</h1>
+    <h2 class="subtitle">{t("projects.subtitle")}</h2>
+
+    <p class="see_more">{t("projects.seeMore")} <PrettyLink src="https://github.com/jmartinez3421" label="Github" icon="brand-github" size={2.4} /></p>
     <BottomLightDivider inverted={true} />
 </section>
 
@@ -23,5 +27,19 @@ const t = useTranslations(lang);
         font-size: 6rem;
         font-weight: 700;
         color: var(--color-primary);
+    }
+
+    .subtitle {
+        font-size: 2.8rem;
+        margin-top: 2rem;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
     }
 </style>
