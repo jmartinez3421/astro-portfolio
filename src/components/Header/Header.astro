@@ -5,18 +5,22 @@ import { Icon } from "astro-icon";
 import headerImage from "/public/images/Header_image.png"
 import Contact from "./Contact.astro";
 import Background from "./Background.astro";
-import BottomLightDivider from "./BottomLightDivider.astro";
+import BottomLightDivider from "../BottomLightDivider.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header>
     <Background />
     <div class="header">
         <div class="description">
-            <h1>Hi, I'm Jordi</h1>
-            <h2>I create efficient and beautiful webapps</h2>
-            <p>I'm a Frontend developer with experience in React, NextJS, Angular, Typescript and Javascript. I've also worked in Backend using Node, express, Mongoose and a little bit of Java.</p>
-            <p>I'm very creative and I like to bring a lot of ideas and improvements to the projects I work on.</p>
-            <p>I am always looking for new challenges, and I am eager to collaborate with others on interesting projects. If you have any questions or would like to work together, please don't hesitate to <b>contact me:</b></p>
+            <h1>{t("header.title")}</h1>
+            <h2>{t("header.subtitle")}</h2>
+            <p>{t("header.description1")}</p>
+            <p>{t("header.description2")}</p>
+            <p>{t("header.description3")}</p>
             <Contact />
         </div>
         <div class="image_container">
