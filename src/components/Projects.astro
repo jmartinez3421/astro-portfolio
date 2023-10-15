@@ -1,14 +1,27 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import BottomLightDivider from "./BottomLightDivider.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="projects">
-    <h1>My Projects</h1>
+    <h1 class="title">{t("projects.title")}</h1>
+    <BottomLightDivider inverted={true} />
 </section>
 
 <style>
     section {
-        background-color: var(--color-surface);
-        padding: 8rem;
+        position: relative;
+        background: linear-gradient(to bottom, var(--color-surface) 0%, var(--color-surface) calc(100% - 11.5rem), transparent calc(100% - 11.5rem), transparent 100%);
+        padding: 8rem 8rem 19.5rem 8rem;
         margin-top: -1px;
+    }
+
+    .title {
+        font-size: 6rem;
+        font-weight: 700;
+        color: var(--color-primary);
     }
 </style>
