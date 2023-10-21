@@ -1,0 +1,48 @@
+{
+    "en": [
+        {
+            "company": "ICOT",
+            "title": "Computer technician",
+            "dates": "Oct. 2021 - Dic. 2021",
+            "description": "To carry out the telephone migration of the company ANAV, changing all the cell phones of its employees, configuring them for their correct use and management by the company in charge of the migration.",
+            "image": "/images/Icot_img.png"
+        },
+        {
+            "company": "Madrija",
+            "title": "Junior Web Programmer",
+            "dates": "Dic. 2021 - Dic. 2022",
+            "description": "Customer-facing program support and Angular code development to maintain and add enhancements to the application.",
+            "image": "/images/Madrija_img.png"
+        },
+        {
+            "company": "Ixorigue",
+            "title": "Frontend Developer",
+            "dates": "Jan. 2023 - Present",
+            "description": "Develop code with React to add features and enhancements to the main application, as well as work on the Landing and other projects using NextJS",
+            "image": "/images/Ixorigue_img.png"
+        }
+    ],
+    "es": [
+        {
+            "company": "ICOT",
+            "title": "Técnico informático",
+            "dates": "Oct. 2021 - Dic. 2021",
+            "description": "Realizar la migración telefónica de la empresa ANAV, cambiando todos los teléfonos de sus empleados, configurándolos para su correcto uso y gestión por parte de la empresa encargada de la migración.",
+            "image": "/images/Icot_img.png"
+        },
+        {
+            "company": "Madrija",
+            "title": "Programador Web Junior",
+            "dates": "Dic. 2021 - Dic. 2022",
+            "description": "Soporte de programa orientado al cliente y desarrollo de código Angular para mantener y agregar mejoras a la aplicación.",
+            "image": "/images/Madrija_img.png"
+        },
+        {
+            "company": "Ixorigue",
+            "title": "Desarrollador Frontend",
+            "dates": "Ene. 2023 - Presente",
+            "description": "Desarrollar código con React para agregar funciones y mejoras a la aplicación principal, así como trabajar en la Landing y otros proyectos usando NextJS",
+            "image": "/images/Ixorigue_img.png"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 import { createBucketClient } from "@cosmicjs/sdk";
-import { PUBLIC_COSMIC_BUCKET_SLUG, PUBLIC_COSMIC_READ_KEY } from "@/lib/environment.ts";
+import { PUBLIC_COSMIC_BUCKET_SLUG, PUBLIC_COSMIC_READ_KEY } from "../environment.ts";
 
 export interface Post {
     slug: string;

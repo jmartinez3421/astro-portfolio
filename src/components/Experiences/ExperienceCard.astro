@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    company: string;
+    title: string;
+    dates: string;
+    description: string;
+    image: string;
+}
+
+const { title, description, image, company, dates } = Astro.props;
+---
+
+<div class="exp-card">
+    {image !== "" && <Image src={image} alt={title} class="card-image" width="400" height="300" />}
+    <div class="card-header">
+        <h3>{title}</h3>
+        <h4>{company} / {dates}</h4>
+    </div>
+    <p class="card-description" set:html={description} />
+</div>
+
+<style>
+    .exp-card {
+        max-width: 40rem;
+        background-color: var(--color-surface-dark);
+        border-radius: 12px;
+        padding: 2rem;
+        overflow: hidden;
+        transition: transform .2s;
+    }
+
+    .exp-card:hover {
+        transform: scale(1.2);
+    }
+
+    .card-image {
+        position: relative;
+        margin: -2rem -2rem 2rem -2rem;
+        width: calc(100% + 4rem);
+        height: auto;
+    }
+
+    .card-header {
+        margin-bottom: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .card-header h3 {
+        margin: 0;
+        font-size: 2.4rem;
+    }
+
+    .card-header h4 {
+        margin: 0;
+        font-size: 1.8rem;
+        filter: brightness(0.9);
+    }
+
+    .card-description {
+        font-size: 2.2rem;
+    }
+</style>
