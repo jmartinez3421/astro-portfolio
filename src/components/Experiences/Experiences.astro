@@ -17,8 +17,8 @@ const experiencesList = experiences[lang] as Experience[];
     <h2 class="subtitle">{t("experience.subtitle")}</h2>
 
     <div class="cards-container">
-        {experiencesList.map(({ company, dates, title, image, description }) => (
-            <ExperienceCard company={company} title={title} dates={dates} description={description} image={image} />
+        {experiencesList.map((experience) => (
+            <ExperienceCard {...experience} />
         ))}
     </div>
 

@@ -1,22 +1,17 @@
 ---
 import { Image } from "astro:assets";
+import { Experience } from "../../models/Experience";
 
-interface Props {
-    company: string;
-    title: string;
-    dates: string;
-    description: string;
-    image: string;
-}
+interface Props extends Experience {}
 
-const { title, description, image, company, dates } = Astro.props;
+const { title, description, image, company, dates, link } = Astro.props;
 ---
 
 <div class="exp-card">
     {image !== "" && <Image src={image} alt={title} class="card-image" width="400" height="300" />}
     <div class="card-header">
         <h3>{title}</h3>
-        <h4>{company} / {dates}</h4>
+        <h4><a href={link} target="_blank">{company}</a> / {dates}</h4>
     </div>
     <p class="card-description" set:html={description} />
 </div>
@@ -28,11 +23,6 @@ const { title, description, image, company, dates } = Astro.props;
         border-radius: 12px;
         padding: 2rem;
         overflow: hidden;
-        transition: transform .2s;
-    }
-
-    .exp-card:hover {
-        transform: scale(1.2);
     }
 
     .card-image {
@@ -51,16 +41,22 @@ const { title, description, image, company, dates } = Astro.props;
 
     .card-header h3 {
         margin: 0;
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+        color: var(--color-primary);
     }
 
     .card-header h4 {
         margin: 0;
-        font-size: 1.8rem;
+        font-size: 2.1rem;
         filter: brightness(0.9);
     }
 
+    .card-header h4 a {
+        text-decoration: none;
+        color: var(--color-secondary);
+    }
+
     .card-description {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
 </style>

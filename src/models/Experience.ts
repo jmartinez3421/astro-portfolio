@@ -4,4 +4,5 @@ export interface Experience {
     dates: string;
     description: string;
     image: string;
+    link: string;
 }
