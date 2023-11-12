@@ -1,0 +1,46 @@
+---
+import { getLangFromUrl,useTranslations } from "../../i18n/utils";
+import PrettyLink from "../PrettyLink.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="contact">
+    <h1 class="title">{t("contact.title")}</h1>
+    <h2 class="subtitle">{t("contact.subtitle")}</h2>
+    <div class="links">
+        <PrettyLink src="mailto:jmartinezg.fp@gmail.com" icon="mail" label="Email" size={3} />
+        <PrettyLink src="https://github.com/jmartinez3421" newTab={true} icon="brand-github" label="Github" size={3} />
+        <PrettyLink src="https://www.linkedin.com/in/jordi-martínez-grau-813934215" newTab={true} icon="brand-linkedin" label="Linkedin" size={3} />
+    </div>
+</section>
+
+<style>
+    section {
+        position: relative;
+        padding: 8rem;
+        margin-top: -1px;
+    }
+
+    .title {
+        font-size: 6rem;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .subtitle {
+        font-size: 2.8rem;
+        margin-top: 2rem;
+        font-weight: 500;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 4rem;
+        gap: 5rem;
+        font-size: 3rem;
+    }
+</style>

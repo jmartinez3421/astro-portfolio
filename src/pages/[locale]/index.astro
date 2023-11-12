@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from "../../components/Header/Header.astro";
 import Experience from "../../components/Experiences/Experiences.astro";
+import Contact from "../../components/Contact/Contact.astro";
 
 export const prerender = true;
 
@@ -17,6 +18,7 @@ export function getStaticPaths() {
 	<main>
 		<Header />
 		<Experience />
+		<Contact />
 	</main>
 </Layout>
 
@@ -26,5 +28,7 @@ export function getStaticPaths() {
 		inset: 0;
 		overflow-y: auto;
 		overflow-x: hidden;
+
+		scroll-behavior: smooth;
 	}
 </style>

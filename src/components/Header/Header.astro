@@ -3,7 +3,6 @@ import { Image } from "astro:assets"
 import { Icon } from "astro-icon";
 
 import headerImage from "/public/images/Header_image.png"
-import Contact from "./Contact.astro";
 import Background from "./Background.astro";
 import BottomLightDivider from "../BottomLightDivider.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
@@ -21,7 +20,9 @@ const t = useTranslations(lang);
             <p>{t("header.description1")}</p>
             <p>{t("header.description2")}</p>
             <p>{t("header.description3")}</p>
-            <Contact />
+            <a class="contact" href="#contact">
+                {t("header.contact")}
+            </a>
         </div>
         <div class="image_container">
             <Image src={headerImage} alt="An image of Jordi Martínez Grau" class="image" />
@@ -95,6 +96,25 @@ const t = useTranslations(lang);
         font-size: 2.4rem;
         font-weight: 300;
         margin-bottom: 3rem;
+    }
+
+    .contact {
+        margin-top: 3rem;
+        background-color: var(--color-primary-dark);
+        padding: 1.5rem 4rem;
+        width: fit-content;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 2.1rem;
+        transition: all .2s ease-in-out;
+        display: block;
+
+        text-decoration: none;
+        color: var(--color-on-surface);
+    }
+
+    .contact:hover {
+        transform: scale(1.1);
     }
 
     @media (min-width: 1920px) {
